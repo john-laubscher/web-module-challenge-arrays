@@ -103,7 +103,8 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
-    return array.pop();
+    array.pop();
+    return array;
 }
 
 
@@ -140,9 +141,14 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array,flavor){
-   return array.splice(flavor);
+    for(let i=0; i<array.length; i++){
+        if(array[i]===flavor){
+         array.splice(i,1);
+         return array;
+    }
 }
-
+}
+removeFlavorByName(originalFlavors, "Chocolate");
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -167,7 +173,9 @@ Use the filterByWord function below to do the following:
 
 function filterByWord(array,flavor){    //when I input "chocolate" as a string, it says 'identifier expected"
    for(let i=0; i<array.length; i++){
-       return(array[i].includes(flavor));
+       if(array[i].includes(flavor)=== true){
+            return array
+       }
    }
 }
 
